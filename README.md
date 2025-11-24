@@ -10,7 +10,9 @@ The model is built using the following Python dependencies, which are listed in 
 - python313Packages.pandas  
 - python313Packages.matplotlib  
 - python313Packages.scikit-learn-extra  
-- python313Packages.seaborn  
+- python313Packages.seaborn
+- python313Packages.numpy  
+- python313Packages.flask
 
 ## Frontend (Under Development)
 
