@@ -2,6 +2,43 @@
 
 This project is a model trained to predict real estate prices for the Bengaluru dataset. The frontend is built using React and the backend is built using Flask Python.
 
+## Demo
+
+### 🎥 Video Demo
+https://github.com/nazakatumrani/real-estate-price-prediction/raw/main/demo/video.mkv
+
+*(Click the link to watch the demo video)*
+
+### 🖼️ Screenshots
+
+<p align="center">
+  <img src="demo/251124_192131.png" width="600" />
+</p>
+
+<p align="center">
+  <img src="demo/251124_192707.png" width="600" />
+</p>
+
+<p align="center">
+  <img src="demo/251124_192732.png" width="600" />
+</p>
+
+<p align="center">
+  <img src="demo/251124_192806.png" width="600" />
+</p>
+
+<p align="center">
+  <img src="demo/251124_192856.png" width="600" />
+</p>
+
+<p align="center">
+  <img src="demo/251124_192910.png" width="600" />
+</p>
+
+<p align="center">
+  <img src="demo/251124_192927.png" width="600" />
+</p>
+
 ## Dependencies
 
 The model is built using the following Python dependencies, which are listed in the `shell.nix` file:
