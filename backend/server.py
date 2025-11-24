@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import util
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def hello_world():
@@ -13,7 +15,6 @@ def get_locations():
     res = jsonify({
         'locations': util.get_location_names()
     })
-    res.headers.add('Access-Control-Allow-Origin', '*')
     return res
 
 # Predict price route
@@ -32,14 +33,12 @@ def predict_price():
         res = jsonify({
             'estimated_price': estimated_price
         })
-        res.headers.add('Access-Control-Allow-Origin', '*')
         return res
     except Exception as e:
         print(e)
         res = jsonify({
             'error': str(e)
         })
-        res.headers.add('Access-Control-Allow-Origin', '*')
         return res, 400
 
 if __name__ == '__main__':

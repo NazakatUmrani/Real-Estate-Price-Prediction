@@ -11,6 +11,7 @@ pkgs.mkShell {
     python313Packages.numpy
     # Flask for web development
     python313Packages.flask
+    python313Packages.flask-cors
   ];
 
   shellHook = ''
