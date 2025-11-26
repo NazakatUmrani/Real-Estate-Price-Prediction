@@ -51,11 +51,11 @@ The model is built using the following Python dependencies, which are listed in 
 - python313Packages.numpy  
 - python313Packages.flask
 
-## Frontend (Under Development)
+## Frontend
 
-The frontend is built using React and is located in the `frontend` directory.
+The frontend is built using React (Vite) with ShadcnUI and is located in the `frontend` directory.
 
-## Backend (Under Development)
+## Backend
 
 The backend is built using Flask Python and is located in the `backend` directory.
 
@@ -76,4 +76,4 @@ The `Model` folder contains all data, scripts, and artifacts used for training. 
 
 ## Running the Application
 
-To run the application, navigate to the `frontend` directory and run `npm start`. To run the backend, navigate to the `backend` directory and run `python app.py`.
+To run the application, navigate to the `frontend` directory and run `npm run dev`. To run the backend, navigate to the `backend` directory and run `python server.py`.
