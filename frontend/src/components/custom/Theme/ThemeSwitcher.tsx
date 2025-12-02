@@ -24,9 +24,6 @@ const ThemeSwitcher = () => {
     "Violet",
   ] as const;
 
-  // Create a type from the themes array
-  type Theme = typeof themes[number];
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
