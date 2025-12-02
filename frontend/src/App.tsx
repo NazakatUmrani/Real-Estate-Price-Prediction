@@ -4,6 +4,8 @@ import { Input } from './components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
 import SearchableDropdown from './components/custom/SearchableDropdown'
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 interface FormData {
   area: string;
   bhk: string;
@@ -49,8 +51,8 @@ function App() {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/locations')
-        const data = await response.json()
+        const response = await fetch(`${API_BASE}/locations`);
+        const data = await response.json();
         
         // Capitalize each word in location names
         const locationOptions: Location[] = data.locations.map((location: string) => ({
@@ -95,7 +97,7 @@ function App() {
     setPrediction(null)
 
     try {
-      const response = await fetch('http://localhost:5000/predict_price', {
+      const response = await fetch(`${API_BASE}/predict_price`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
