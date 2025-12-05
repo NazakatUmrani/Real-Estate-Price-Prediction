@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card'
 import SearchableDropdown from './components/custom/SearchableDropdown'
+// Import json locations file
+import data from '@/constants/locations.json'
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
@@ -25,7 +27,11 @@ function App() {
     bathrooms: '',
     location: ''
   })
-  const [locations, setLocations] = useState<Location[]>([])
+  // Set locations from importing json file
+  const locations = data.locations.map((location: string) => ({
+    id: location,
+    label: location.replace(/\b\w/g, char => char.toUpperCase())
+  }))
   const [loading, setLoading] = useState(false)
   const [prediction, setPrediction] = useState<number | null>(null)
 
@@ -46,30 +52,6 @@ function App() {
     { id: '4', label: '4 Bathrooms' },
     { id: '5', label: '5 Bathrooms' }
   ]
-
-  // Fetch locations on component mount
-  useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        const response = await fetch(`${API_BASE}/locations`);
-        const data = await response.json();
-        
-        // Capitalize each word in location names
-        const locationOptions: Location[] = data.locations.map((location: string) => ({
-          id: location,
-          label: location.replace(/\b\w/g, char => char.toUpperCase())
-        }))
-        
-        setLocations(locationOptions)
-      } catch (error) {
-        console.error('Error fetching locations:', error)
-        // Fallback locations with capitalized names
-        setLocations([])
-      }
-    }
-
-    fetchLocations()
-  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
